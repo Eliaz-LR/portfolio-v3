@@ -4,11 +4,12 @@ import Card from "../components/Card.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Welcome to Astro.">
+<BaseLayout>
   <main>
     <button class="btn btn-primary">One</button>
     <button class="btn btn-secondary">Two</button>
     <button class="btn">Three</button>
     <Bio client:load />
+    <hr />
   </main>
 </BaseLayout>
