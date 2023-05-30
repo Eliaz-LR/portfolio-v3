@@ -1,0 +1,39 @@
+---
+import ProjectCard from "./small/ProjectCard.astro";
+---
+
+<div class="flex flex-col space-y-6">
+  <h1>My projects</h1>
+  <ProjectCard
+    title="Lyrical Bomb"
+    description="A lobby based multiplayer game where players have to guess songs that contain a given word in their lyrics. It utilizes Socket.io and the Genius API."
+    img="/post_img.webp"
+    tags={[
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "TailwindCSS",
+      "Express.js",
+      "Fly.io",
+      "Node.js",
+    ]}
+    url="https://lyrical-bomb.eliaz-lr.dev/"
+  />
+  <ProjectCard
+    title="Portfolio Website 3 (this one)"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+    img="/post_img.webp"
+    tags={["TypeScript", "HTML", "Astro", "TailwindCSS", "DaisyUI", "Vue.js"]}
+  />
+  <ProjectCard
+    title="Portfolio Website 2"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+    img="/post_img.webp"
+  />
+  <ProjectCard
+    title="Portfolio Website 1"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+    img="/post_img.webp"
+  />
+</div>

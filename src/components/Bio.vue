@@ -1,3 +1,5 @@
+<!-- This was taken from my previous portfolio website (with a few tweaks to deal with the way astro works) -->
+
 <template>
   <p class="text-center text-lg">
     👋<br />

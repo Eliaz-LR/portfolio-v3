@@ -1,16 +1,20 @@
 ---
-const { title, img, desc, url, tags } = Astro.props;
 import { Image } from "@astrojs/image/components";
+
+const { title, img, description, gitUrl, url, tags = [] } = Astro.props;
 ---
 
 <div class="card lg:card-side bg-base-100 shadow-xl">
   <Image aspectRatio="16:9" height={200} format="webp" src={img} alt={title} />
   <div class="card-body">
-    <h2 class="card-title">New album is released!</h2>
-    <p>Click the button to listen on Spotiwhy app.</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
+    <h2 class="card-title">{title}</h2>
+    <p>{description}</p>
+    <div class="flex flex-row space-x-4">
+      {gitUrl ? <a href={gitUrl}>Github Repository</a> : <div />}
+      {url ? <a href={url}>Demo</a> : <div />}
+    </div>
+    <div class="flex flex-row flex-wrap">
+      {tags.map((tag: string) => <div class="badge badge-outline">{tag}</div>)}
     </div>
   </div>
 </div>
