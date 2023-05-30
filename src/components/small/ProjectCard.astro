@@ -1,0 +1,16 @@
+---
+const { title, img, desc, url, tags } = Astro.props;
+import { Image } from "@astrojs/image/components";
+---
+
+<div class="card lg:card-side bg-base-100 shadow-xl">
+  <Image aspectRatio="16:9" height={200} format="webp" src={img} alt={title} />
+  <div class="card-body">
+    <h2 class="card-title">New album is released!</h2>
+    <p>Click the button to listen on Spotiwhy app.</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">Fashion</div>
+      <div class="badge badge-outline">Products</div>
+    </div>
+  </div>
+</div>

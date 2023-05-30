@@ -1,5 +1,5 @@
 <template>
-  <p class="text-center">
+  <p class="text-center text-lg">
     👋<br />
     Hi, I'm Eliaz, a {{ age }} years-old developer who is curently studying at
     <a href="https://www.iut-clermont.fr/formations/dut-informatique/">UCA</a>.
@@ -28,9 +28,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-a {
-  @apply link font-bold link-primary;
-}
-</style>
