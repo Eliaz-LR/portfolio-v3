@@ -1,6 +1,7 @@
 ---
 import Bio from "../components/Bio.vue";
 import Projects from "../components/Projects.astro";
+import Technologies from "../components/Technologies.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -12,5 +13,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <Bio client:only="vue" />
     <hr class="" />
     <Projects />
+    <hr />
+    <Technologies />
   </main>
 </BaseLayout>
