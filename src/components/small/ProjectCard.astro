@@ -17,7 +17,9 @@ const { title, img, description, gitUrl, url, tags = [] } = Astro.props;
       <div class="flex flex-row flex-wrap">
         {
           tags.map((tag: string) => (
-            <div class="badge badge-outline">{tag}</div>
+            <div class="badge badge-outline">
+              <a href={"#" + tag}>{tag}</a>
+            </div>
           ))
         }
       </div>

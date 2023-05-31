@@ -2,6 +2,7 @@
   <div class="m-2">
     <div
       @click="desc"
+      :id="name"
       class="cursor-pointer max-w-lg flex flex-col xl:flex-row w-auto border-2 border-base-300 rounded-box"
     >
       <div class="flex flex-row shrink-0">
