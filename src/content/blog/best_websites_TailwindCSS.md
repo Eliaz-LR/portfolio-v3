@@ -3,8 +3,6 @@ title: The best websites I found for Tailwind CSS components
 description: A list of the best websites I found for Tailwind CSS components
 ---
 
-# The best websites I found for Tailwind CSS components
-
 Honestly, this first article is mainly for me to test the whole process of publishing an article and to showcase the article system I made from scratch with Vue. I'm not sure if I'll keep this article or not, but I'll leave it here for now.
 
 As a begginer with TailwindCSS developpement, I found making components from scratch pretty hard. Thankfully I ended up finding some really good pre-made components websites. I used these to help myself getting a headstart when making components.

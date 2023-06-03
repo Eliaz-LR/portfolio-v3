@@ -2,6 +2,7 @@
 import TechCard from "./small/TechCard.vue";
 ---
 
+<h1>Technologies</h1>
 <div class="flex flex-row flex-wrap justify-center">
   <TechCard
     client:load
@@ -101,5 +102,11 @@ import TechCard from "./small/TechCard.vue";
     level={2}
     comments="I've used Node.js for the backend of Lyrical Bomb (Coupled with Express.JS and Socket.IO). Having a single language for both the frontend and the backend is quite convenient."
   />
-  <TechCard client:load name="HTML" image="" level={4} comments="It's HTML" />
+  <TechCard
+    client:load
+    name="HTML"
+    image="/tech_logo/html.svg"
+    level={4}
+    comments="It's HTML"
+  />
 </div>

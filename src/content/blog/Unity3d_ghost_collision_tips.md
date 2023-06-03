@@ -3,8 +3,6 @@ title: How to solve ghost collision problems in Unity3D
 description: A quick guide on how to solve ghost collision problems in Unity3D
 ---
 
-# How to solve ghost collision problems in Unity3D
-
 ## Background story
 
 For a class I'm taking, I'm currently making a mini golf game using Unity. Like any minigolf game, we have a ball that will roll on different surfaces. However, sometimes doing so can cause the ball to be ejected from the surface it's on. This bug, common to many physics engines, is called a ghost collision. I'll explain what it is and how I solved it.

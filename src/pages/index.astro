@@ -7,10 +7,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout>
   <main>
-    <button class="btn btn-primary">One</button>
-    <button class="btn btn-secondary">Two</button>
-    <button class="btn">Three</button>
-    <Bio client:only="vue" />
+    <Bio client:load />
     <hr />
     <Projects />
     <hr />

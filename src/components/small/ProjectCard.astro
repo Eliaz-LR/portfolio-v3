@@ -5,19 +5,21 @@ const { title, img, description, gitUrl, url, tags = [] } = Astro.props;
 ---
 
 <div class="card card-compact lg:card-side bg-base-100 shadow-xl">
-  <Image aspectRatio="16:9" height={200} format="webp" src={img} alt={title} />
-  <div class="card-body">
+  <figure class="basis-1/2">
+    <img src={img} alt={title} />
+  </figure>
+  <div class="basis-1/2 card-body">
     <h2 class="card-title">{title}</h2>
     <p>{description}</p>
     <div class="card-actions">
-      <div class="flex flex-row space-x-4">
+      <div class="flex flex-row">
         {gitUrl ? <a href={gitUrl}>Github Repository</a> : <div />}
         {url ? <a href={url}>Demo</a> : <div />}
       </div>
       <div class="flex flex-row flex-wrap">
         {
           tags.map((tag: string) => (
-            <div class="badge badge-outline">
+            <div class="badge badge-outline m-1 p-3">
               <a href={"#" + tag}>{tag}</a>
             </div>
           ))

@@ -7,7 +7,9 @@
     >
       <div class="flex flex-row shrink-0">
         <img
-          class="mx-5 h-auto w-20 flex-none bg-cover rounded-t text-center overflow-hidden"
+          class="mx-5 h-auto flex-none bg-cover rounded-t text-center overflow-hidden"
+          width="80"
+          height="80"
           :src="image"
           :alt="name"
         />

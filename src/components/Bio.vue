@@ -20,7 +20,7 @@ import dayjs from "dayjs";
 export default {
   data() {
     return {
-      age: {},
+      age: dayjs().diff(dayjs("2000-12-03"), "year"),
     };
   },
   created() {
