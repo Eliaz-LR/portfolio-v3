@@ -1,4 +1,6 @@
 ---
+title: The best websites I found for Tailwind CSS components
+description: A list of the best websites I found for Tailwind CSS components
 ---
 
 # The best websites I found for Tailwind CSS components
