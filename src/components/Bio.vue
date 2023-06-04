@@ -8,7 +8,6 @@
     <br />
     I'm interested in a lot of subjects ranging from economics to technology in
     general.<br />
-    I'm open to offers if you're looking for a full-stack developer. 😄<br />
     <a href="https://github.com/Eliaz-LR">My Github</a>.
     <a href="mailto:me@eliaz-lr.dev">Email me here</a> !
   </p>
@@ -30,3 +29,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+a {
+  @apply link font-bold link-primary;
+}
+</style>

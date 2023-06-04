@@ -1,6 +1,4 @@
 ---
-import { Image } from "@astrojs/image/components";
-
 const { title, img, description, gitUrl, url, tags = [] } = Astro.props;
 ---
 
@@ -12,7 +10,7 @@ const { title, img, description, gitUrl, url, tags = [] } = Astro.props;
     <h2 class="card-title">{title}</h2>
     <p>{description}</p>
     <div class="card-actions">
-      <div class="flex flex-row">
+      <div class="flex flex-row space-x-2">
         {gitUrl ? <a href={gitUrl}>Github Repository</a> : <div />}
         {url ? <a href={url}>Demo</a> : <div />}
       </div>
@@ -28,3 +26,9 @@ const { title, img, description, gitUrl, url, tags = [] } = Astro.props;
     </div>
   </div>
 </div>
+
+<style>
+  a {
+    @apply !link font-bold !link-primary;
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+export interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<div class="card w-96 bg-base-100 shadow-xl">
+  <a href={href}>
+    <div class="card-body">
+      <h2 class="card-title">{title}</h2>
+      <p>{body}</p>
+    </div>
+  </a>
+</div>
+
+<style></style>
