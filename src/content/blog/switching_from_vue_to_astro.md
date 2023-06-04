@@ -1,6 +1,8 @@
 ---
 title: Switching from Vue to Astro
 description: What switching from Vue to Astro changed for my website
+date: "2023-05-06"
+tags: ["Astro", "Vue", "WebDev"]
 ---
 
 ## Why I switched

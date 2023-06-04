@@ -3,15 +3,17 @@ export interface Props {
   title: string;
   body: string;
   href: string;
+  date: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, date } = Astro.props;
 ---
 
 <div class="card w-96 bg-base-100 shadow-xl">
   <a href={href}>
     <div class="card-body">
       <h2 class="card-title">{title}</h2>
+      <div class="badge badge-ghost badge-accent">{date}</div>
       <p>{body}</p>
     </div>
   </a>

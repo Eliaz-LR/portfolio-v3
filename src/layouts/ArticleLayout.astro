@@ -4,14 +4,34 @@ import type { BlogSchema } from "../content/config";
 
 export interface Props extends BlogSchema {}
 
-const { title, description, pubDate, updatedDate, heroImage, badge } =
-  Astro.props;
+const { title, description, date, tags } = Astro.props;
 ---
 
 <BaseLayout>
   <main>
-    <article>
+    <article class="prose prose-lg lg:prose-xl">
       <h1>{title}</h1>
+      <p class="text-gray-500">
+        {
+          date.toLocaleDateString("en-UK", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })
+        }
+      </p>
+      {
+        tags && (
+          <p class="text-gray-500">
+            {tags.map((tag) => (
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                {tag}
+              </span>
+            ))}
+          </p>
+        )
+      }
+      <hr />
       <slot />
     </article>
   </main>

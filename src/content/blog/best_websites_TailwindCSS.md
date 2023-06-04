@@ -1,6 +1,8 @@
 ---
 title: The best websites I found for Tailwind CSS components
 description: A list of the best websites I found for Tailwind CSS components
+date: "2022-08-18"
+tags: ["TailwindCSS", "CSS"]
 ---
 
 Honestly, this first article is mainly for me to test the whole process of publishing an article and to showcase the article system I made from scratch with Vue. I'm not sure if I'll keep this article or not, but I'll leave it here for now.
