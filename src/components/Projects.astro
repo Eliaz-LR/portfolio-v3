@@ -19,11 +19,14 @@ import ProjectCard from "./small/ProjectCard.astro";
       "Node.js",
     ]}
     url="https://lyrical-bomb.eliaz-lr.dev/"
+    gitUrl="https://github.com/Eliaz-LR/Lyrical-Bomb"
+    dateStart={new Date(2023, 3, 20)}
+    dateEnd={new Date(2023, 5, 4)}
   />
   <ProjectCard
     title="Portfolio Website 3.0 (this one)"
     description="Rewrite with Astro of my previous website (which was using Vue.js). I talk more in detail about this in an article ;)"
-    img="/post_img.webp"
+    img="/proj_pics/Website3.webp"
     tags={["TypeScript", "HTML", "Astro", "TailwindCSS", "DaisyUI", "Vue.js"]}
     gitUrl=""
   />
@@ -42,5 +45,14 @@ import ProjectCard from "./small/ProjectCard.astro";
     tags={["JavaScript", "HTML", "TailwindCSS"]}
     gitUrl="https://github.com/Eliaz-LR/Personnal-JS-Site"
     url="https://old.eliaz-lr.dev/"
+  />
+
+  <ProjectCard
+    title="3D Minesweeper"
+    description="A minesweeper game in 3D and first person view with an online leaderboard."
+    img="/proj_pics/3dMinesweeper.webp"
+    tags={["Unity", "C#", "Firebase"]}
+    gitUrl="https://github.com/Eliaz-LR/3D-Minesweeper"
+    url="https://play.unity.com/mg/other/webgl-build-482"
   />
 </div>

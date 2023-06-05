@@ -1,4 +1,15 @@
 ---
+export interface Props {
+  title: string;
+  img: string;
+  description: string;
+  gitUrl?: string;
+  url?: string;
+  tags?: string[];
+  dateStart?: Date;
+  dateEnd?: Date;
+}
+
 const {
   title,
   img = "/post_img.webp",
@@ -6,17 +17,32 @@ const {
   gitUrl,
   url,
   tags = [],
+  dateStart,
+  dateEnd,
 } = Astro.props;
 ---
 
-<div class="card card-compact lg:card-side bg-base-100 shadow-xl border">
+<div
+  class="card card-compact lg:card-side bg-base-100 shadow-xl border border-base-300"
+>
   <figure class="basis-1/2">
-    <img src={img} alt={title} />
+    <img src={img} alt={title} class="h-full" />
   </figure>
   <div class="basis-1/2 card-body">
     <h2 class="card-title">{title}</h2>
     <p>{description}</p>
-    <div class="card-actions">
+    <div class="card-actions flex-col">
+      <div>
+        {
+          dateStart && dateEnd ? (
+            <span class="badge badge-ghost">
+              {dateStart.toLocaleDateString()} - {dateEnd.toLocaleDateString()}
+            </span>
+          ) : (
+            <div />
+          )
+        }
+      </div>
       <div class="flex flex-row space-x-2">
         {gitUrl ? <a href={gitUrl}>Github Repository</a> : <div />}
         {url ? <a href={url}>Demo</a> : <div />}
