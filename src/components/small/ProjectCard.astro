@@ -1,8 +1,15 @@
 ---
-const { title, img, description, gitUrl, url, tags = [] } = Astro.props;
+const {
+  title,
+  img = "/post_img.webp",
+  description,
+  gitUrl,
+  url,
+  tags = [],
+} = Astro.props;
 ---
 
-<div class="card card-compact lg:card-side bg-base-100 shadow-xl">
+<div class="card card-compact lg:card-side bg-base-100 shadow-xl border">
   <figure class="basis-1/2">
     <img src={img} alt={title} />
   </figure>
