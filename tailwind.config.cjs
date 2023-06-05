@@ -36,6 +36,12 @@ module.exports = {
       "night",
       "coffee",
       "winter",
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
+          primary: "#7d3eea",
+        },
+      },
     ],
   },
 };
