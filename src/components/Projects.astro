@@ -30,6 +30,7 @@ import ProjectCard from "./small/ProjectCard.astro";
     tags={["TypeScript", "HTML", "Astro", "TailwindCSS", "DaisyUI", "Vue.js"]}
     gitUrl="https://github.com/Eliaz-LR/portfolio-v3"
     url="https://eliaz-lr.dev/"
+    dateStart={new Date(2023, 5, 28)}
   />
   <ProjectCard
     title="Portfolio Website 2.0"
@@ -38,17 +39,9 @@ import ProjectCard from "./small/ProjectCard.astro";
     tags={["Vue.js", "JavaScript", "HTML", "TailwindCSS"]}
     gitUrl="https://github.com/Eliaz-LR/Personal-website-v2"
     url="https://portfolio2.eliaz-lr.dev/"
+    dateStart={new Date(2022, 7, 24)}
+    dateEnd={new Date(2022, 8, 20)}
   />
-
-  <ProjectCard
-    title="Portfolio Website 1.0"
-    description="This was my first project with Javascript. It emulates the feel of a command line interface."
-    img="/proj_pics/OldWebsite.webp"
-    tags={["JavaScript", "HTML", "TailwindCSS"]}
-    gitUrl="https://github.com/Eliaz-LR/Personnal-JS-Site"
-    url="https://old.eliaz-lr.dev/"
-  />
-
   <ProjectCard
     title="3D Minesweeper"
     description="A minesweeper game in 3D and first person view with an online leaderboard."
@@ -56,5 +49,17 @@ import ProjectCard from "./small/ProjectCard.astro";
     tags={["Unity", "C#", "Firebase"]}
     gitUrl="https://github.com/Eliaz-LR/3D-Minesweeper"
     url="https://play.unity.com/mg/other/webgl-build-482"
+    dateStart={new Date(2022, 1, 28)}
+    dateEnd={new Date(2022, 3, 18)}
+  />
+  <ProjectCard
+    title="Portfolio Website 1.0"
+    description="This was my first project with Javascript. It emulates the feel of a command line interface."
+    img="/proj_pics/OldWebsite.webp"
+    tags={["JavaScript", "HTML", "TailwindCSS"]}
+    gitUrl="https://github.com/Eliaz-LR/Personnal-JS-Site"
+    url="https://old.eliaz-lr.dev/"
+    dateStart={new Date(2020, 12, 8)}
+    dateEnd={new Date(2022, 1, 20)}
   />
 </div>

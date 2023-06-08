@@ -46,6 +46,10 @@ const {
             <span class="badge badge-ghost">
               {dateStart.toLocaleDateString()} - {dateEnd.toLocaleDateString()}
             </span>
+          ) : dateStart ? (
+            <span class="badge badge-ghost">
+              {dateStart.toLocaleDateString()}
+            </span>
           ) : (
             <div />
           )
