@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <p v-if="display_description" class="p-1 h-full">
+      <p v-if="display_description" class="p-2 h-full">
         {{ comments }}
       </p>
     </div>

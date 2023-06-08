@@ -13,4 +13,5 @@ export default defineConfig({
     vue(),
     image(),
   ],
+  site: "https://portfolio--v3.web.app/",
 });

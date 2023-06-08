@@ -26,7 +26,15 @@ const {
   class="card card-compact lg:card-side bg-base-100 shadow-xl border border-base-300"
 >
   <figure class="basis-1/2">
-    <img src={img} alt={title} class="h-full" />
+    {
+      url ? (
+        <a href={url}>
+          <img src={img} alt={title} class="h-full" />
+        </a>
+      ) : (
+        <img src={img} alt={title} class="h-full" />
+      )
+    }
   </figure>
   <div class="basis-1/2 card-body">
     <h2 class="card-title">{title}</h2>
