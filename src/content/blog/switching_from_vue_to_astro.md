@@ -27,6 +27,8 @@ My previous Vue.js website had this score:
 While my new Astro website has this score:
 ![Lighthouse score for my new website](../../assets/blog/lighthouse_score_website-v3.png)
 
-The First Contentful Paint went from 2.6s to 0.9s and the total blocking time went from 470ms to 120ms.
+The First Contentful Paint went from 2.6s to 0.9s and the total blocking time went from 470ms to 10ms.
 
 Out of these gains, an estimated 1.8s comes from the switch to Astro, while the rest comes from the rest of the optimizations I made (highlighted in the Lighthouse report).
+
+To get the most out of Astro, I suggest using their [Asset system](https://docs.astro.build/en/guides/assets/) to manage images rather than their [Images Integration](https://docs.astro.build/en/guides/integrations-guide/image/). Doing so allowed me to have width and height attributes on my images automatically as well as converting them to webp. This allowed me to improve the performance even more.
