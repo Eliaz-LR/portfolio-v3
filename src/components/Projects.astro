@@ -1,5 +1,10 @@
 ---
 import ProjectCard from "./small/ProjectCard.astro";
+import minesweeper from "../assets/proj_pics/3dMinesweeper.webp";
+import LyricalBomb from "../assets/proj_pics/LyricalBomb.webp";
+import OldWebsite from "../assets/proj_pics/OldWebsite.webp";
+import Website2 from "../assets/proj_pics/Website2.webp";
+import Website3 from "../assets/proj_pics/Website3.webp";
 ---
 
 <div class="flex flex-col space-y-6">
@@ -7,7 +12,7 @@ import ProjectCard from "./small/ProjectCard.astro";
   <ProjectCard
     title="Lyrical Bomb"
     description="A lobby based multiplayer game where players have to guess songs that contain a given word in their lyrics. It utilizes Socket.io and the Genius API."
-    img="/proj_pics/LyricalBomb.webp"
+    img={LyricalBomb}
     tags={[
       "React",
       "JavaScript",
@@ -26,7 +31,7 @@ import ProjectCard from "./small/ProjectCard.astro";
   <ProjectCard
     title="Portfolio Website 3.0 (this one)"
     description="Rewrite with Astro of my previous website (which was using Vue.js). I talk more in detail about this in an article ;)"
-    img="/proj_pics/Website3.webp"
+    img={Website3}
     tags={["TypeScript", "HTML", "Astro", "TailwindCSS", "DaisyUI", "Vue.js"]}
     gitUrl="https://github.com/Eliaz-LR/portfolio-v3"
     url="https://eliaz-lr.dev/"
@@ -35,7 +40,7 @@ import ProjectCard from "./small/ProjectCard.astro";
   <ProjectCard
     title="Portfolio Website 2.0"
     description="This is my second portfolio website. I wanted to make it more user friendly than the first one."
-    img="/proj_pics/Website2.webp"
+    img={Website2}
     tags={["Vue.js", "JavaScript", "HTML", "TailwindCSS"]}
     gitUrl="https://github.com/Eliaz-LR/Personal-website-v2"
     url="https://portfolio2.eliaz-lr.dev/"
@@ -45,7 +50,7 @@ import ProjectCard from "./small/ProjectCard.astro";
   <ProjectCard
     title="3D Minesweeper"
     description="A minesweeper game in 3D and first person view with an online leaderboard."
-    img="/proj_pics/3dMinesweeper.webp"
+    img={minesweeper}
     tags={["Unity", "C#", "Firebase"]}
     gitUrl="https://github.com/Eliaz-LR/3D-Minesweeper"
     url="https://play.unity.com/mg/other/webgl-build-482"
@@ -55,7 +60,7 @@ import ProjectCard from "./small/ProjectCard.astro";
   <ProjectCard
     title="Portfolio Website 1.0"
     description="This was my first project with Javascript. It emulates the feel of a command line interface."
-    img="/proj_pics/OldWebsite.webp"
+    img={OldWebsite}
     tags={["JavaScript", "HTML", "TailwindCSS"]}
     gitUrl="https://github.com/Eliaz-LR/Personnal-JS-Site"
     url="https://old.eliaz-lr.dev/"

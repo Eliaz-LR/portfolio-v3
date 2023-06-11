@@ -22,10 +22,10 @@ The first thing that Astro promises is to make your website faster. This is main
 Having this performance boost, I also tried to optimize the rest of my website with performance in mind. For this, I used [Lighthouse](https://developers.google.com/web/tools/lighthouse) to see what I could improve.
 
 My previous Vue.js website had this score:
-![Lighthouse score for my previous website](/blog/lighthouse_score_website-v2.png)
+![Lighthouse score for my previous website](../../assets/blog/lighthouse_score_website-v2.png)
 
 While my new Astro website has this score:
-![Lighthouse score for my new website](/blog/lighthouse_score_website-v3.png)
+![Lighthouse score for my new website](../../assets/blog/lighthouse_score_website-v3.png)
 
 The First Contentful Paint went from 2.6s to 0.9s and the total blocking time went from 470ms to 120ms.
 

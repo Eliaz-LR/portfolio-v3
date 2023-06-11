@@ -1,7 +1,7 @@
 ---
 export interface Props {
   title: string;
-  img: string;
+  img: ImageMetadata;
   description: string;
   gitUrl?: string;
   url?: string;
@@ -12,7 +12,7 @@ export interface Props {
 
 const {
   title,
-  img = "/post_img.webp",
+  img,
   description,
   gitUrl,
   url,
@@ -20,6 +20,8 @@ const {
   dateStart,
   dateEnd,
 } = Astro.props;
+
+import { Image } from "astro:assets";
 ---
 
 <div
@@ -28,11 +30,13 @@ const {
   <figure class="basis-1/2">
     {
       url ? (
-        <a href={url}>
-          <img src={img} alt={title} class="h-full" />
+        <a href={url} class="h-full">
+          <Image src={img} alt={title} />
         </a>
       ) : (
-        <img src={img} alt={title} class="h-full" />
+        <div class="h-full">
+          <Image src={img} alt={title} />
+        </div>
       )
     }
   </figure>
