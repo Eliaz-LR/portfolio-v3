@@ -7,12 +7,16 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   experimental: {
-    assets: true
+    assets: true,
   },
-  integrations: [tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), vue(), sitemap()],
-  site: "https://portfolio--v3.web.app/"
+  integrations: [
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    vue(),
+    sitemap(),
+  ],
+  site: "https://eliaz-lr.dev/",
 });
