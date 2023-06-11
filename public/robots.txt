@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://portfolio--v3.web.app/sitemap-index.xml
