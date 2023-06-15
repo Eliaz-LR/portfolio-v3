@@ -16,15 +16,19 @@
 <script>
 import dayjs from "dayjs";
 
+const calculateAge = () => {
+  return dayjs().diff(dayjs("2000-12-03"), "year", true).toFixed(9);
+};
+
 export default {
   data() {
     return {
-      age: dayjs().diff(dayjs("2000-12-03"), "year", true).toFixed(9),
+      age: calculateAge(),
     };
   },
   created() {
     this.interval = setInterval(() => {
-      this.age = dayjs().diff(dayjs("2000-12-03"), "year", true).toFixed(9);
+      this.age = calculateAge();
     }, 50);
   },
 };
