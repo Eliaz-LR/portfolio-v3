@@ -31,11 +31,11 @@ import { Image } from "astro:assets";
     {
       url ? (
         <a href={url} class="h-full">
-          <Image src={img} alt={title} />
+          <Image src={img} alt={title} loading="eager" />
         </a>
       ) : (
         <div class="h-full">
-          <Image src={img} alt={title} />
+          <Image src={img} alt={title} loading="eager" />
         </div>
       )
     }

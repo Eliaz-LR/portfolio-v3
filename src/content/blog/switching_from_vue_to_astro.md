@@ -19,7 +19,7 @@ With this switch, I plan to make the final version of my porfolio website, with 
 
 The first thing that Astro promises is to make your website faster. This is mainly visible in the time to load the js bundle. With Vue, the js bundle was 1.4 MB (not counting google analytics), while with Astro, it's only 68KB. Astro loads the js exported from the components at build time, so it doesn't need to load the whole Vue library. The page also load the HTML/CSS first, so the user can see the content of the page even without the js.
 
-Having this performance boost, I also tried to optimize the rest of my website with performance in mind. For this, I used [Lighthouse](https://developers.google.com/web/tools/lighthouse) to see what I could improve.
+Having this performance boost, I also tried to optimize the rest of my website with performance in mind. For this, I used [Lighthouse](https://developers.google.com/web/tools/lighthouse) to see what I could improve. To scan your whole website, you can also use [Unlighthouse](https://unlighthouse.dev/).
 
 My previous Vue.js website had this score:
 ![Lighthouse score for my previous website](../../assets/blog/lighthouse_score_website-v2.png)
