@@ -14,7 +14,7 @@ const { href, title, body, date } = Astro.props;
 >
   <a href={href}>
     <div class="card-body">
-      <h2 class="card-title">{title}</h2>
+      <h2 class="card-title" transition:name={title}>{title}</h2>
       <div class="badge badge-ghost badge-accent">{date}</div>
       <p>{body}</p>
     </div>

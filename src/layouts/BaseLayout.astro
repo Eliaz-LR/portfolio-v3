@@ -2,6 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 
+import { ViewTransitions } from "astro:transitions";
+
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
@@ -11,6 +13,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <ViewTransitions />
   </head>
   <body>
     <Header />
