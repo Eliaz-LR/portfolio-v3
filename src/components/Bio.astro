@@ -23,6 +23,10 @@
   document.getElementById("dyn_age")!.innerText = calculateAge();
 
   setInterval(() => {
-    document.getElementById("dyn_age")!.innerText = calculateAge();
+    const dynAgeElement = document.getElementById("dyn_age");
+    if (dynAgeElement) {
+      dynAgeElement.innerText = calculateAge();
+    }
   }, 50);
+
 </script>
