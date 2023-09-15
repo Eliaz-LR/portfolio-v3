@@ -654,7 +654,7 @@
     var theme = window.localStorage.getItem("data-theme");
       
     if (theme) {
-    updateTheme(theme);
+      updateTheme(theme);
     } else {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         updateTheme("dark");
