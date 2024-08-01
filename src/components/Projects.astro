@@ -8,7 +8,16 @@ import Website3 from "../assets/proj_pics/Website3.webp";
 ---
 
 <div class="flex flex-col space-y-6">
-  <h1>My projects</h1>
+  <h1>My personal projects</h1>
+  <ProjectCard
+    title="Portfolio Website 3.0 (this one)"
+    description="Rewrite with Astro of my previous website (which was using Vue.js). I talk more in detail about this in an article ;)"
+    img={Website3}
+    tags={["TypeScript", "HTML", "Astro", "TailwindCSS", "DaisyUI", "Vue.js"]}
+    gitUrl="https://github.com/Eliaz-LR/portfolio-v3"
+    url="https://eliaz-lr.dev/"
+    dateStart={new Date(2023, 5, 28)}
+  />
   <ProjectCard
     title="Lyrical Bomb"
     description="A lobby based multiplayer game where players have to guess songs that contain a given word in their lyrics. It utilizes Socket.io and the Genius API."
@@ -23,19 +32,9 @@ import Website3 from "../assets/proj_pics/Website3.webp";
       "Fly.io",
       "Node.js",
     ]}
-    url="https://lyrical-bomb.eliaz-lr.dev/"
     gitUrl="https://github.com/Eliaz-LR/Lyrical-Bomb"
     dateStart={new Date(2023, 3, 20)}
     dateEnd={new Date(2023, 5, 4)}
-  />
-  <ProjectCard
-    title="Portfolio Website 3.0 (this one)"
-    description="Rewrite with Astro of my previous website (which was using Vue.js). I talk more in detail about this in an article ;)"
-    img={Website3}
-    tags={["TypeScript", "HTML", "Astro", "TailwindCSS", "DaisyUI", "Vue.js"]}
-    gitUrl="https://github.com/Eliaz-LR/portfolio-v3"
-    url="https://eliaz-lr.dev/"
-    dateStart={new Date(2023, 5, 28)}
   />
   <ProjectCard
     title="Portfolio Website 2.0"
