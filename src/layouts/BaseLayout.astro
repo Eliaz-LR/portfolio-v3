@@ -29,9 +29,9 @@ const computedTitle = title === SITE_TITLE ? title : `${title} | ${SITE_TITLE}`;
     <script>
       import { themeChange } from "theme-change";
       themeChange();
+      // 👆 you could import the CDN directly instead of these two lines
 
       document.addEventListener("astro:after-swap", themeChange);
-      // 👆 you could import the CDN directly instead of these two lines
     </script>
     <BaseHead title={computedTitle} description={description} />
     <ViewTransitions />
