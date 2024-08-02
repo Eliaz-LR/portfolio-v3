@@ -7,6 +7,8 @@ import { ViewTransitions } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+
+const computedTitle = title === SITE_TITLE ? title : `${title} | ${SITE_TITLE}`;
 ---
 
 <!doctype html>
@@ -31,7 +33,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
       document.addEventListener("astro:after-swap", themeChange);
       // 👆 you could import the CDN directly instead of these two lines
     </script>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={computedTitle} description={description} />
     <ViewTransitions />
   </head>
   <body>

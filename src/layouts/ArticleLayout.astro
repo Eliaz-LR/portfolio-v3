@@ -7,7 +7,7 @@ export interface Props extends BlogSchema {}
 const { title, description, pubDate, updatedDate, tags } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout title={title} description={description}>
   <main>
     <article class="prose prose-lg lg:prose-xl">
       <h1 transition:name={title}>{title}</h1>
