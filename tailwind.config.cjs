@@ -10,8 +10,6 @@ module.exports = {
       "light",
       "dark",
       "cupcake",
-      "bumblebee",
-      "emerald",
       "corporate",
       "synthwave",
       "retro",
