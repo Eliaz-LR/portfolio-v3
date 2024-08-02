@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
-posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout title="Blog">
@@ -15,7 +15,7 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
           title={post.data.title}
           body={post.data.description}
           href={"/blog/" + post.slug}
-          date={post.data.date.toLocaleDateString("en-UK", {
+          date={post.data.pubDate.toLocaleDateString("en-UK", {
             day: "numeric",
             month: "long",
             year: "numeric",

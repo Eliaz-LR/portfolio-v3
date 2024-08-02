@@ -23,7 +23,8 @@ const { Content } = await entry.render();
 <ArticleLayout
   title={post.title}
   description={post.description}
-  date={post.date}
+  pubDate={post.pubDate}
+  updatedDate={post.updatedDate}
   tags={post.tags}
 >
   <Content />

@@ -1,7 +1,7 @@
 ---
 title: How to solve ghost collision problems in Unity3D
 description: A quick guide on how to solve ghost collision problems in Unity3D
-date: "2022-12-22"
+pubDate: "2022-12-22"
 tags: ["Unity3D", "GameDev", "Physics"]
 ---
 

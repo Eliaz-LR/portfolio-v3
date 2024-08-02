@@ -4,7 +4,7 @@ import type { BlogSchema } from "../content/config";
 
 export interface Props extends BlogSchema {}
 
-const { title, description, date, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, tags } = Astro.props;
 ---
 
 <BaseLayout>
@@ -13,11 +13,20 @@ const { title, description, date, tags } = Astro.props;
       <h1 transition:name={title}>{title}</h1>
       <p class="text-gray-500">
         {
-          date.toLocaleDateString("en-UK", {
+          pubDate.toLocaleDateString("en-UK", {
             day: "numeric",
             month: "long",
             year: "numeric",
           })
+        }
+        {
+          updatedDate &&
+            ", Updated on " +
+              updatedDate.toLocaleDateString("en-UK", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })
         }
       </p>
       {
