@@ -17,13 +17,13 @@ To solve this problem, we can use a few different methods:
 
 ## Solution 1 : Use a different physics engine
 
-Starting in Unity 2019, Unity has a new physics engine available called **Havok Physics**. This physics engine is used in many AAA games, and is known for its stability and accuracy. It's available for free as an experimental package which is not compatible with regular Unity physics components and requires the conversion of your GameObjects into "entities" based on Unity’s DOTS technology. Havok Physics for Unity version 1.0.0 ([link](https://docs.unity3d.com/Packages/com.havok.physics@1.0/manual/index.html)) does not need to use the script "Convert to Entity" but the main caviat is that only Pro, Enterprise and UIC Unity users have access to this Havok version at runtime.
+Starting in Unity 2019, Unity has a new physics engine available called **Havok Physics**. This physics engine is used in many AAA games, and is known for its stability and accuracy. It's available for free as an experimental package which is not compatible with regular Unity physics components and requires the conversion of your GameObjects into "entities" based on Unity’s DOTS technology. Havok Physics for Unity version 1.0.0 ([link](https://docs.unity3d.com/Packages/com.havok.physics@1.0/manual/index.html)) does not need to use the script "Convert to Entity" but the main caveat is that only Pro, Enterprise and UIC Unity users have access to this Havok version at runtime.
 
 This meant that Havok was a pretty bad option for me, so I had to find another solution.
 
 ## Solution 2 : Make the ball bigger
 
-Unity's collisions work better with bigger objects, this was however anoying for me as it would mess up the scale of my game and it would make the physics feel more "heavy".
+Unity's collisions work better with bigger objects, this was however annoying for me as it would mess up the scale of my game and it would make the physics feel more "heavy".
 
 ## Solution 3 : The best and simplest solution
 

@@ -13,7 +13,7 @@ However, I've had a lot of changes I wanted to make to my website. I wanted to m
 
 Those changes would have probably stayed on the backburner for a while if I didn't stumble upon [Astro](https://astro.build/). Astro's promise is to make static websites way faster utilizing server side hydration and good old HTML. The best way to make a website fast is by loading as little things as possible and, while switching from a single page app to a multi page app isn't always ideal, for my website where users don't load a lot of pages, it's perfect.
 
-With this switch, I plan to make the final version of my porfolio website, with all the features I wanted to add. Since I want to become a full stack developper, I want my next project to have a backend like Lyrical Bomb did.
+With this switch, I plan to make the final version of my portfolio website, with all the features I wanted to add. Since I want to become a full stack developer, I want my next project to have a backend like Lyrical Bomb did.
 
 ## What switching changed
 
