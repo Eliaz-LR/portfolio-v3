@@ -4,6 +4,7 @@ import TechCard from "./small/TechCard.vue";
 
 <h1>Technologies</h1>
 <h2>Languages</h2>
+<h3>Programming</h3>
 <div class="flex flex-row flex-wrap justify-center">
   <TechCard
     client:load
@@ -53,6 +54,23 @@ import TechCard from "./small/TechCard.vue";
     image="/tech_logo/ruby.svg"
     level={1}
     comments="I've used Ruby mainly in school."
+  />
+</div>
+<h3>Scripting</h3>
+<div class="flex flex-row flex-wrap justify-center">
+  <TechCard
+    client:load
+    name="Bash"
+    image="/tech_logo/bash.svg"
+    comments="I've used Bash to automate tasks by making small scripts used with cron for example."
+    level={3}
+  />
+  <TechCard
+    client:load
+    name="PowerShell"
+    image="/tech_logo/powershell.svg"
+    comments="I've used PowerShell to make CLI and GUI (with .NET) tools."
+    level={4}
   />
 </div>
 <h2>DevOps</h2>

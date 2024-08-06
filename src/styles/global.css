@@ -10,10 +10,10 @@
     @apply text-4xl font-bold text-center;
   }
   h2 {
-    @apply text-3xl font-bold;
+    @apply text-3xl font-bold mb-2;
   }
   h3 {
-    @apply text-2xl font-bold;
+    @apply text-xl font-bold indent-5;
   }
   p > a {
     @apply underline;
