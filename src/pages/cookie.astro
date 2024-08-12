@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { Image } from "astro:assets";
+import cookieImg from "../assets/perfectCookie.png";
+---
+
+<BaseLayout>
+  <div class="justify-center">
+    <p>WebSocket ID: <span id="ws-id"></span></p>
+    <div
+      class="tooltip tooltip-open tooltip-top m-10"
+      data-tip=""
+      id="click-tip-display"
+    >
+      <Image src={cookieImg} alt="COOKIE" id="cookie" width="200" />
+    </div>
+    <h2>NUMBER OF CONNECTED PEOPLE : <span id="connected-people"></span></h2>
+  </div>
+</BaseLayout>
+<script>
+  var client_id = Math.floor(Math.random() * 1000000);
+  const ws_id = document.querySelector("#ws-id") as HTMLElement;
+  ws_id.textContent = client_id.toString();
+  var ws = new WebSocket(`ws://127.0.0.1:8000/ws/${client_id}`);
+
+  ws.onmessage = function (event) {
+    handle_message(event);
+  };
+
+  const click_display = document.querySelector(
+    "#click-tip-display"
+  ) as HTMLElement;
+  const number_of_connected_people = document.querySelector(
+    "#connected-people"
+  ) as HTMLElement;
+  function handle_message(event: MessageEvent) {
+    console.log(event.data);
+    var data = JSON.parse(event.data);
+    if (data["type"] === "hit_count") {
+      click_display.setAttribute("data-tip", data["number"]);
+    }
+    if (data["type"] === "connected_count") {
+      number_of_connected_people.textContent = data["number"];
+    }
+  }
+  function send_message() {
+    ws.send(
+      JSON.stringify({
+        type: "click",
+      })
+    );
+  }
+  const cookie = document.querySelector("#cookie") as HTMLElement;
+  cookie.addEventListener("click", send_message);
+</script>
