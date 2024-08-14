@@ -20,28 +20,35 @@ import cookieImg from "../assets/perfectCookie.png";
 </BaseLayout>
 <script>
   var client_id = Math.floor(Math.random() * 1000000);
-  const ws_id = document.querySelector("#ws-id") as HTMLElement;
-  ws_id.textContent = client_id.toString();
   var ws = new WebSocket(`ws://127.0.0.1:8000/ws/${client_id}`);
+  // var ws = new WebSocket(
+  //   `wss://cookie-multiplayer-counter.fly.dev:443/ws/${client_id}`
+  // );
 
-  ws.onmessage = function (event) {
-    handle_message(event);
-  };
+  var hit_count = 0;
+  var click_display: NodeListOf<Element>;
+  var connected_count = 0;
+  var connected_people: NodeListOf<Element>;
 
-  const click_display = document.querySelector(
-    "#click-tip-display"
-  ) as HTMLElement;
-  const number_of_connected_people = document.querySelector(
-    "#connected-people"
-  ) as HTMLElement;
+  ws.onmessage = (event) => handle_message(event);
+
   function handle_message(event: MessageEvent) {
     console.log(event.data);
     var data = JSON.parse(event.data);
-    if (data["type"] === "hit_count") {
-      click_display.setAttribute("data-tip", data["number"]);
-    }
-    if (data["type"] === "connected_count") {
-      number_of_connected_people.textContent = data["number"];
+
+    switch (data.type) {
+      case "hit_count":
+        hit_count = data.number;
+        click_display.forEach((element) => {
+          element.setAttribute("data-tip", hit_count.toString());
+        });
+        break;
+      case "connected_count":
+        connected_count = data.number;
+        connected_people.forEach((element) => {
+          element.textContent = connected_count.toString();
+        });
+        break;
     }
   }
   function send_message() {
@@ -51,6 +58,31 @@ import cookieImg from "../assets/perfectCookie.png";
       })
     );
   }
-  const cookie = document.querySelector("#cookie") as HTMLElement;
-  cookie.addEventListener("click", send_message);
+
+  function initBinding() {
+    console.log("init binding");
+
+    const ws_id = document.querySelectorAll("#ws-id");
+    ws_id.forEach((element) => {
+      element.textContent = client_id.toString();
+    });
+
+    click_display = document.querySelectorAll("#click-tip-display");
+    click_display.forEach((element) => {
+      element.setAttribute("data-tip", hit_count.toString());
+    });
+
+    connected_people = document.querySelectorAll("#connected-people");
+    connected_people.forEach((element) => {
+      element.textContent = connected_count.toString();
+    });
+
+    const cookie = document.querySelectorAll("#cookie");
+    cookie.forEach((element) => {
+      element.addEventListener("click", send_message);
+    });
+  }
+
+  initBinding();
+  document.addEventListener("astro:after-swap", initBinding);
 </script>
