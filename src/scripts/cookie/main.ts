@@ -1,4 +1,8 @@
-import { animateStringOnClick, animateShakeOnElement } from "./animations";
+import {
+  animateStringOnClick,
+  animateShakeOnElement,
+  animateHoardStringOnClick,
+} from "./animations";
 
 var client_id = Math.floor(Math.random() * 1000000);
 // var ws = new WebSocket(`ws://127.0.0.1:8000/ws/${client_id}`);
@@ -13,6 +17,8 @@ var click_display: NodeListOf<Element>;
 var connected_count = 0;
 var connected_people: NodeListOf<Element>;
 var cookie: NodeListOf<Element>;
+var needs_to_send = true;
+var num_clicks_since_last_send = 0;
 
 ws.onmessage = (event) => handle_message(event);
 
@@ -22,8 +28,10 @@ function handle_message(event: MessageEvent) {
 
   switch (data.type) {
     case "hit_count":
-      hit_count = data.number;
-      render_hit_count();
+      if (data.number > hit_count) {
+        hit_count = data.number;
+        render_hit_count();
+      }
       break;
     case "connected_count":
       connected_count = data.number;
@@ -33,27 +41,67 @@ function handle_message(event: MessageEvent) {
       break;
   }
 }
+
+function send_clicks() {
+  if (
+    num_clicks_since_last_send > 0 &&
+    ws.readyState == ws.OPEN &&
+    needs_to_send
+  ) {
+    needs_to_send = false;
+    ws.send(
+      JSON.stringify({
+        type: "click",
+        number: num_clicks_since_last_send,
+      })
+    );
+    console.log("sent " + num_clicks_since_last_send + " clicks");
+    num_clicks_since_last_send = 0;
+    setTimeout(() => {
+      needs_to_send = true;
+      send_clicks();
+    }, 1000);
+  } else {
+  }
+}
+
 function on_cookie_click(event: MouseEvent) {
   local_hit_count += 1;
-  ws.send(
-    JSON.stringify({
-      type: "click",
-    })
-  );
+  num_clicks_since_last_send += 1;
+  hit_count += 1;
+  render_hit_count();
+  send_clicks();
   set_local_storage(local_hit_count);
 
-  if (local_hit_count % 100 == 0) {
-    cookie.forEach((element) => {
-      animateStringOnClick(event, "+100", ["text-5xl"]);
+  let coords = { x: event.clientX, y: event.clientY };
+  let coords_cookie = { x: event.clientX, y: event.clientY };
+  cookie.forEach((element) => {
+    coords_cookie = {
+      x: element.getBoundingClientRect().left + 100,
+      y: element.getBoundingClientRect().top + 100,
+    };
+
+    if (local_hit_count % 100 == 0) {
+      animateStringOnClick(coords, "+100", ["text-5xl", "z-10"]);
+      animateHoardStringOnClick(coords_cookie, "🍪", 50, ["text-xl"]);
+      animateHoardStringOnClick(coords_cookie, "🚀", 10, ["text-xl"]);
+      animateShakeOnElement(element, true);
+    } else if (local_hit_count % 25 == 0) {
       animateShakeOnElement(element);
-    });
-  } else if (local_hit_count % 25 == 0) {
-    animateStringOnClick(event, "+25", ["text-4xl"]);
-  } else if (local_hit_count % 10 == 0) {
-    animateStringOnClick(event, "+10", ["text-3xl"]);
-  } else {
-    animateStringOnClick(event, "+1", ["text-2xl"]);
-  }
+      animateStringOnClick(coords, "+25", ["text-4xl", "z-10"]);
+      animateHoardStringOnClick(coords_cookie, "🍪", 15, ["text-xl"]);
+      animateHoardStringOnClick(coords_cookie, "🚀", 3, ["text-xl"]);
+    } else if (local_hit_count % 10 == 0) {
+      animateShakeOnElement(element);
+      animateStringOnClick(coords, "+10", ["text-3xl", "z-10"]);
+      animateHoardStringOnClick(coords_cookie, "🍪", 5, ["text-xl"]);
+      animateHoardStringOnClick(coords_cookie, "🚀", 1, ["text-xl"]);
+    } else {
+      animateShakeOnElement(element);
+      animateStringOnClick(coords, "+1", ["text-2xl", "z-10"]);
+      animateHoardStringOnClick(coords_cookie, "🍪", 1, ["text-xl"]);
+    }
+  });
 }
 
 function render_hit_count() {
