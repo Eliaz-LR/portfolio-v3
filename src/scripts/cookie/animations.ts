@@ -51,8 +51,11 @@ export function animateShakeOnElement(
     nameClass = "animate-smallShake";
     timeout = 100;
   }
+  if (element.classList.contains(nameClass)) {
+    return;
+  }
   element.classList.add(nameClass);
   setTimeout(() => {
     element.classList.remove(nameClass);
-  }, 1000);
+  }, timeout);
 }

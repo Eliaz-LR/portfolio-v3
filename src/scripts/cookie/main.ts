@@ -150,6 +150,8 @@ function initBinding() {
       on_cookie_click(event);
     });
   });
+
+  render_hit_count();
 }
 
 initBinding();
