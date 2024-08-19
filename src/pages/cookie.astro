@@ -6,16 +6,16 @@ import cookieImg from "../assets/perfectCookie.png";
 ---
 
 <BaseLayout>
-  <div class="justify-center">
-    <p>WebSocket ID: <span id="ws-id"></span></p>
+  <div class="justify-center text-center">
     <div
-      class="tooltip tooltip-open tooltip-top m-10"
+      class="tooltip tooltip-open tooltip-top m-10 flex justify-center"
       data-tip=""
       id="click-tip-display"
     >
       <Image src={cookieImg} alt="COOKIE" id="cookie" width="200" />
     </div>
-    <h2>NUMBER OF CONNECTED PEOPLE : <span id="connected-people"></span></h2>
+    <h2>YOU DID <span id="local-num-clicks"></span> % OF THE CLICKS</h2>
+    <h3>NUMBER OF CONNECTED PEOPLE : <span id="connected-people"></span></h3>
   </div>
 </BaseLayout>
 <script src="../scripts/cookie/main.ts"></script>
