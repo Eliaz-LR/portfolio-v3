@@ -1,10 +1,10 @@
-import { animatePlusOneOnCookieClick } from "./animations";
+import { animateStringOnClick, animateShakeOnElement } from "./animations";
 
 var client_id = Math.floor(Math.random() * 1000000);
-var ws = new WebSocket(`ws://127.0.0.1:8000/ws/${client_id}`);
-// var ws = new WebSocket(
-//   `wss://cookie-multiplayer-counter.fly.dev:443/ws/${client_id}`
-// );
+// var ws = new WebSocket(`ws://127.0.0.1:8000/ws/${client_id}`);
+var ws = new WebSocket(
+  `wss://cookie-multiplayer-counter.fly.dev:443/ws/${client_id}`
+);
 
 var hit_count = 0;
 var local_hit_count = get_local_storage();
@@ -12,6 +12,7 @@ var local_num_clicks: NodeListOf<Element>;
 var click_display: NodeListOf<Element>;
 var connected_count = 0;
 var connected_people: NodeListOf<Element>;
+var cookie: NodeListOf<Element>;
 
 ws.onmessage = (event) => handle_message(event);
 
@@ -33,15 +34,26 @@ function handle_message(event: MessageEvent) {
   }
 }
 function on_cookie_click(event: MouseEvent) {
-  animatePlusOneOnCookieClick(event);
   local_hit_count += 1;
-  render_hit_count();
   ws.send(
     JSON.stringify({
       type: "click",
     })
   );
   set_local_storage(local_hit_count);
+
+  if (local_hit_count % 100 == 0) {
+    cookie.forEach((element) => {
+      animateStringOnClick(event, "+100", ["text-5xl"]);
+      animateShakeOnElement(element);
+    });
+  } else if (local_hit_count % 25 == 0) {
+    animateStringOnClick(event, "+25", ["text-4xl"]);
+  } else if (local_hit_count % 10 == 0) {
+    animateStringOnClick(event, "+10", ["text-3xl"]);
+  } else {
+    animateStringOnClick(event, "+1", ["text-2xl"]);
+  }
 }
 
 function render_hit_count() {
@@ -49,12 +61,19 @@ function render_hit_count() {
     element.setAttribute("data-tip", hit_count.toString());
   });
   local_num_clicks.forEach((element) => {
-    element.textContent = ((100 * local_hit_count) / hit_count).toFixed(5);
+    element.textContent =
+      local_hit_count.toString() +
+      " (" +
+      ((100 * local_hit_count) / hit_count).toFixed(5);
   });
 }
 
 function set_local_storage(number: number) {
-  localStorage.setItem("hit_count", number.toString());
+  if (number < hit_count) {
+    localStorage.setItem("hit_count", number.toString());
+  } else {
+    localStorage.setItem("hit_count", (0).toString());
+  }
 }
 
 function get_local_storage(): number {
@@ -77,7 +96,7 @@ function initBinding() {
     element.textContent = connected_count.toString();
   });
 
-  const cookie = document.querySelectorAll("#cookie");
+  cookie = document.querySelectorAll("#cookie");
   cookie.forEach((element) => {
     element.addEventListener("click", (event: MouseEvent) => {
       on_cookie_click(event);
