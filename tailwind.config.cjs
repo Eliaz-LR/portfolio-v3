@@ -2,7 +2,26 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        fadeUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(0)",
+          },
+          "50%": {
+            opacity: "1",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(-60px)",
+          },
+        },
+      },
+      animation: {
+        fadeUp: "fadeUp 1s",
+      },
+    },
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
