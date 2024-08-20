@@ -134,6 +134,7 @@ function get_local_storage(): number {
 }
 
 function initBinding() {
+  // Hide loading div and show content div
   let loading_div = document.querySelectorAll("#cookie_loading");
   loading_div.forEach((element) => {
     element.classList.add("hidden");
@@ -153,8 +154,8 @@ function initBinding() {
 
   cookie = document.querySelectorAll("#cookie");
   cookie.forEach((element) => {
-    element.addEventListener("click", (event: MouseEvent) => {
-      on_cookie_click(event);
+    element.addEventListener("click", (event) => {
+      on_cookie_click(event as MouseEvent);
     });
   });
 
