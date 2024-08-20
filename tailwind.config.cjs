@@ -77,6 +77,9 @@ module.exports = {
       "night",
       "coffee",
       "winter",
+      "dim",
+      "nord",
+      "sunset",
       {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
