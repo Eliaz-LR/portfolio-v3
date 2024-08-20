@@ -9,7 +9,7 @@ import cookieImg from "../assets/perfectCookie.png";
   <span id="cookie_loading" class="m-20 loading loading-spinner loading-lg"></span>
   <div id="cookie_content" class="justify-center text-center hidden">
     <div
-      class="tooltip tooltip-open tooltip-top m-10 flex justify-center touch-manipulation"
+      class="tooltip tooltip-open tooltip-top m-14 flex justify-center touch-manipulation"
       data-tip=""
       id="click-tip-display"
     >
@@ -20,3 +20,9 @@ import cookieImg from "../assets/perfectCookie.png";
   </div>
 </BaseLayout>
 <script src="../scripts/cookie/main.ts"></script>
+
+<style>
+  .tooltip:before {
+    @apply text-2xl;
+  }
+</style>
