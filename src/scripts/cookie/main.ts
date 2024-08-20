@@ -134,8 +134,6 @@ function get_local_storage(): number {
 }
 
 function initBinding() {
-  console.log("init binding");
-
   click_display = document.querySelectorAll("#click-tip-display");
   local_num_clicks = document.querySelectorAll("#local-num-clicks");
 
@@ -154,5 +152,15 @@ function initBinding() {
   render_hit_count();
 }
 
-initBinding();
+ws.onopen = () => {
+  let loading_div = document.querySelectorAll("#loading");
+  loading_div.forEach((element) => {
+    element.classList.add("hidden");
+  });
+  let all_content_div = document.querySelectorAll("#cookie_content");
+  all_content_div.forEach((element) => {
+    element.classList.remove("hidden");
+  });
+  initBinding();
+};
 document.addEventListener("astro:after-swap", initBinding);
