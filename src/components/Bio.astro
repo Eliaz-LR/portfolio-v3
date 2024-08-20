@@ -1,7 +1,14 @@
+---
+  import dayjs from "dayjs";
+
+  const calculateAge = () => {
+    return dayjs().diff(dayjs("2000-12-03"), "year", true).toFixed(9);
+  };
+---
 <h1 class="text-center">Welcome !</h1>
 <p class="text-center text-lg">
   👋<br />
-  Hi, I'm Eliaz, a <span id="dyn_age"></span> years-old developer currently in my
+  Hi, I'm Eliaz, a <span id="dyn_age">{calculateAge}</span> years-old developer currently in my
   second year of a master's degree at
   <a href="https://www.isima.fr/formations/masters/">ISIMA</a>.
   <br />
