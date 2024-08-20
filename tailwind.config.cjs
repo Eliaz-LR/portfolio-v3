@@ -79,7 +79,7 @@ module.exports = {
       "winter",
       {
         dark: {
-          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
+          ...require("daisyui/src/theming/themes")["dark"],
           primary: "#7d3eea",
           "base-content": "#d1d5db",
           "base-300": "#6b7280",
