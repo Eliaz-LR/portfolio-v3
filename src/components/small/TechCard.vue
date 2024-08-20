@@ -10,6 +10,7 @@
           class="mx-5 h-auto flex-none bg-cover rounded-t text-center overflow-hidden"
           width="80"
           height="80"
+          loading="lazy"
           :src="image"
           :alt="name"
         />
