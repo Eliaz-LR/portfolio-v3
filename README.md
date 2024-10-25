@@ -1,5 +1,7 @@
 # Welcome to my Personal Website !
 
+## [Visit Live Site](https://eliaz-lr.dev/)
+
 This website was made with [Astro](https://astro.build), check out the [Astro documentation](https://docs.astro.build) for more information.
 
 I used [Tailwind CSS](https://tailwindcss.com) for styling. I also reused some components from my [previous website](https://github.com/Eliaz-LR/Personal-website-v2) made with Vue.
