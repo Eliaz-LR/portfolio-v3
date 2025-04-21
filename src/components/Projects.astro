@@ -5,10 +5,21 @@ import LyricalBomb from "../assets/proj_pics/LyricalBomb.webp";
 import OldWebsite from "../assets/proj_pics/OldWebsite.webp";
 import Website2 from "../assets/proj_pics/Website2.webp";
 import Website3 from "../assets/proj_pics/Website3.webp";
+import GimmeApp from "../assets/proj_pics/GimmeApp.webp";
 ---
 
 <div class="flex flex-col space-y-6">
   <h1>My personal projects</h1>
+  <ProjectCard
+    title="Gimme App"
+    description=" A full stack Marketplace made with Spring around a typical MVC architecture. Allows users to post items to give,
+chat and purchase them from a front-end or an API."
+    img={GimmeApp}
+    tags={["Java", "SpringBoot", "Gradle", "Docker"]}
+    gitUrl="https://github.com/Eliaz-LR/Gimme-App"
+    dateStart={new Date(2024, 5, 28)}
+    dateEnd={new Date(2024,)}
+  />
   <ProjectCard
     title="Portfolio Website 3.0 (this one)"
     description="Rewrite with Astro of my previous website (which was using Vue.js). I talk more in detail about this in an article ;)"
