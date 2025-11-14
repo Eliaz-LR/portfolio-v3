@@ -24,7 +24,6 @@ pnpm-debug.log*
 .vscode/
 
 # firebase
-firebase.json
 .firebaserc
 .firebase/
 firebase-debug.log
