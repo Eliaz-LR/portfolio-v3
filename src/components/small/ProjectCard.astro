@@ -48,11 +48,11 @@ import { Image } from "astro:assets";
         {
           dateStart && dateEnd ? (
             <span class="badge badge-ghost">
-              {dateStart.toLocaleDateString()} - {dateEnd.toLocaleDateString()}
+              {dateStart.toLocaleDateString("en-UK")} - {dateEnd.toLocaleDateString("en-UK")}
             </span>
           ) : dateStart ? (
             <span class="badge badge-ghost">
-              {dateStart.toLocaleDateString()}
+              {dateStart.toLocaleDateString("en-UK")}
             </span>
           ) : (
             <div />
