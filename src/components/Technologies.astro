@@ -8,6 +8,13 @@ import TechCard from "./small/TechCard.vue";
   <div class="flex flex-row flex-wrap justify-center">
     <TechCard
       client:load
+      name="Java"
+      image="/tech_logo/java.svg"
+      level={3}
+      comments="I've used Java with Spring Boot a lot throughout my Master's degree and my work experience as a backend developer for Euromaster."
+    />
+    <TechCard
+      client:load
       name="Python"
       image="/tech_logo/python.svg"
       comments="Python is my go-to language when making projects in many areas such as AI, Data Science and automatisation."
@@ -43,13 +50,6 @@ import TechCard from "./small/TechCard.vue";
     />
     <TechCard
       client:load
-      name="Java"
-      image="/tech_logo/java.svg"
-      level={2}
-      comments="I've used Java mainly in school."
-    />
-    <TechCard
-      client:load
       name="Ruby"
       image="/tech_logo/ruby.svg"
       level={1}
@@ -60,17 +60,91 @@ import TechCard from "./small/TechCard.vue";
   <div class="flex flex-row flex-wrap justify-center">
     <TechCard
       client:load
+      name="PowerShell"
+      image="/tech_logo/powershell.svg"
+      comments="I've used PowerShell to make CLI and GUI (with .NET) tools."
+      level={4}
+    />
+    <TechCard
+      client:load
       name="Bash"
       image="/tech_logo/bash.svg"
       comments="I've used Bash to automate tasks by making small scripts used with cron for example."
       level={3}
     />
+  </div>
+  <h2>Backend</h2>
+  <h3>Frameworks</h3>
+  <div class="flex flex-row flex-wrap justify-center">
     <TechCard
       client:load
-      name="PowerShell"
-      image="/tech_logo/powershell.svg"
-      comments="I've used PowerShell to make CLI and GUI (with .NET) tools."
+      name="Spring Boot"
+      image="/tech_logo/springboot.svg"
+      level={3}
+      comments="I've used Spring Boot with Java throughout both my Master's degree and my work experience as a backend developer."
+    />
+    <TechCard
+      client:load
+      name="Node.js"
+      image="/tech_logo/nodejs.svg"
+      level={2}
+      comments="I've used Node.js for the backend of Lyrical Bomb. Having a single language for both the frontend and the backend is quite convenient."
+    />
+  </div>
+  <h3>Databases</h3>
+  <div class="flex flex-row flex-wrap justify-center">
+    <TechCard
+      client:load
+      name="PostgreSQL"
+      image="/tech_logo/postgresql.svg"
+      level={2}
+      comments="I've used PostgreSQL as well as PL/pgSQL during my experience as a backend developer for Euromaster. Some of my tasks involved optimization of queries and data management."
+    />
+    <TechCard
+      client:load
+      name="MongoDB"
+      image="/tech_logo/mongodb.svg"
+      level={2}
+      comments="I've used MongoDB during my master's degree."
+    />
+  </div>
+  <h2>Frontend</h2>
+  <div class="flex flex-row flex-wrap justify-center">
+    <TechCard
+      client:load
+      name="Angular"
+      image="/tech_logo/angular.svg"
+      comments="Angular is the latest front end framework I've started learning."
+      level={2}
+    />
+    <TechCard
+      client:load
+      name="Vue.js"
+      image="/tech_logo/vue.svg"
+      comments="Vue.js is my first front end framework."
+      level={2}
+    />
+    <TechCard
+      client:load
+      name="React"
+      image="/tech_logo/react.svg"
+      comments="I've used React on Lyrical Bomb."
+      level={1}
+    />
+    <TechCard
+      client:load
+      name="TailwindCSS"
+      image="/tech_logo/tailwindcss.svg"
+      level={3}
+      comments="Tailwind CSS is my go-to CSS framework. I've used it on most of my projects, including this website. I appreciate how it allows me to quickly make good looking websites. Using it has also made me better at regular CSS."
+    />
+
+    <TechCard
+      client:load
+      name="HTML"
+      image="/tech_logo/html.svg"
       level={4}
+      comments="It's HTML, pretty easy stuff lmao"
     />
   </div>
   <h2>DevOps</h2>
@@ -86,7 +160,7 @@ import TechCard from "./small/TechCard.vue";
       client:load
       name="Ansible"
       image="/tech_logo/ansible.svg"
-      comments="I've used Ansible to automate the deployment of containers during my master's degree for my devops class."
+      comments="I've used Ansible to automate the deployment of containers during my master's degree for my devops class and as a DevOps at Michelin."
       level={2}
     />
     <TechCard
@@ -95,55 +169,6 @@ import TechCard from "./small/TechCard.vue";
       image="/tech_logo/terraform.svg"
       comments="I've used Terraform to automate the creation of cloud resources during my master's degree for my devops class."
       level={1}
-    />
-  </div>
-  <h2>Backend</h2>
-  <div class="flex flex-row flex-wrap justify-center">
-    <TechCard
-      client:load
-      name="Node.js"
-      image="/tech_logo/nodejs.svg"
-      level={2}
-      comments="I've used Node.js for the backend of Lyrical Bomb. Having a single language for both the frontend and the backend is quite convenient."
-    />
-    <TechCard
-      client:load
-      name="MongoDB"
-      image="/tech_logo/mongodb.svg"
-      level={2}
-      comments="I've used MongoDB during my master's degree."
-    />
-  </div>
-  <h2>Frontend</h2>
-  <div class="flex flex-row flex-wrap justify-center">
-    <TechCard
-      client:load
-      name="Vue.js"
-      image="/tech_logo/vue.svg"
-      comments="Vue.js is my first front end framework."
-      level={2}
-    />
-    <TechCard
-      client:load
-      name="React"
-      image="/tech_logo/react.svg"
-      comments="React is the latest front end framework I've started learning. I've used it on Lyrical Bomb."
-      level={2}
-    />
-    <TechCard
-      client:load
-      name="TailwindCSS"
-      image="/tech_logo/tailwindcss.svg"
-      level={3}
-      comments="Tailwind CSS is my go-to CSS framework. I've used it on most of my projects, including this website. I appreciate how it allows me to quickly make good looking websites. Using it has also made me better at regular CSS."
-    />
-
-    <TechCard
-      client:load
-      name="HTML"
-      image="/tech_logo/html.svg"
-      level={4}
-      comments="It's HTML"
     />
   </div>
   <h2>Other</h2>
